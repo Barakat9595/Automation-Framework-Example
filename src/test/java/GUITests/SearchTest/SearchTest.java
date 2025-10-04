@@ -10,9 +10,9 @@ public class SearchTest extends SettingUpTests {
     @Test
     public void testSearch(){
         homePage.openHomePage();
-        searchResultsPage = homePage.searchFor(searchData);
+        homePage.searchFor(searchData);
         // asserting that the fourth search result contains the search term
-        searchResultsPage.scrollToFourthResult();
+        searchResultsPage.scrollToFourthResult(); //search rsult page already intialized in SettingUpTests, so no need to create new object (switching on action)
         String actualResult = searchResultsPage.getFourthSearchResultText();
         Assert.assertEquals(actualResult, expectedResult, "result does not match" );
         // actual result would be: TestNG Tutorial - Guru99 >> failure
